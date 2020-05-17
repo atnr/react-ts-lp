@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer
       css={css`
-        background: #666;
+        background: #333;
         display: flex;
         justify-content: center;
         align-items: center;
