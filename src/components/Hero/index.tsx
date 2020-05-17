@@ -1,6 +1,7 @@
 /**@jsx jsx*/
 import React from 'react'
 import { jsx, css } from '@emotion/core'
+import { Headline } from './Headline'
 
 export const Hero = () => {
   return (
@@ -14,14 +15,7 @@ export const Hero = () => {
         align-items: center;
       `}
     >
-      <h1
-        css={css`
-          margin: 0;
-          font-size: 6rem;
-        `}
-      >
-        HERO is here
-      </h1>
+      <Headline />
     </section>
   )
 }
