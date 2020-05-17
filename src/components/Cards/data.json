@@ -2,16 +2,16 @@
   {
     "title": "title",
     "description": "descriptionが入ります。文章がここに入ります。テキストデータはjsonファイルを編集します。",
-    "imagePath": "image1"
+    "imagePath": "/images/cup.jpg"
   },
   {
     "title": "title1",
     "description": "description2が入ります。文章がここに入ります。テキストデータはjsonファイルを編集します。",
-    "imagePath": "image2"
+    "imagePath": "/images/office.jpg"
   },
   {
     "title": "title2",
     "description": "description3が入ります。文章がここに入ります。テキストデータはjsonファイルを編集します。",
-    "imagePath": "image3"
+    "imagePath": "/images/plants.jpg"
   }
 ]
