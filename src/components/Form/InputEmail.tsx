@@ -12,7 +12,9 @@ export const InputEmail = () => {
     <div
       css={css`
         width: 100%;
-        margin-bottom: 2em;
+        margin-bottom: 4em;
+        display: flex;
+        flex-direction: column;
       `}
     >
       <h2
@@ -28,7 +30,7 @@ export const InputEmail = () => {
           font-size: 2em;
           padding: 0.25em;
           border-radius: 5px;
-          border: 0;
+          border: 1px solid #ccc;
         `}
         onChange={(e) => onChangeHandle(e)}
         placeholder='hoge@example.com'

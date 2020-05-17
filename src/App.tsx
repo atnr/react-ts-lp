@@ -5,6 +5,7 @@ import { Hero } from './components/Hero'
 import { Cards } from './components/Cards'
 import { Footer } from './components/Footer'
 import { Form } from './components/Form'
+import 'animate.css/animate.css'
 
 const App = () => {
   return (
@@ -17,6 +18,9 @@ const App = () => {
             padding: 0;
             font-size: 10px;
             font-family: sans-serif;
+          }
+          .hidden {
+            opacity: 0;
           }
         `}
       />

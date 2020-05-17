@@ -11,8 +11,11 @@ export const InputFirstName = () => {
   return (
     <div
       css={css`
-        width: 50%;
-        margin-bottom: 2em;
+        width: calc((100% - 2em) / 2);
+        margin-right: 2em;
+        margin-bottom: 4em;
+        display: flex;
+        flex-direction: column;
       `}
     >
       <h2
@@ -28,7 +31,7 @@ export const InputFirstName = () => {
           font-size: 2em;
           padding: 0.25em;
           border-radius: 5px;
-          border: 0;
+          border: 1px solid #ccc;
         `}
         onChange={(e) => onChangeHandle(e)}
         placeholder='firstName'

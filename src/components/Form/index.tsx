@@ -7,6 +7,9 @@ import { InputLastName } from './InputLastName'
 import { InputEmail } from './InputEmail'
 import { SubmitButton } from './SubmitButton'
 import { CheckBoxAgreement } from './CheckBoxAgreement'
+import { Headline } from './Headline'
+
+import { mobileBreakPoint } from '../../consitants'
 
 export const Form = () => {
   return (
@@ -15,26 +18,21 @@ export const Form = () => {
         css={css`
           width: 100vw;
           height: 100vh;
-          background: #ccc;
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
         `}
       >
-        <h1
-          css={css`
-            font-size: 2em;
-          `}
-        >
-          Form
-        </h1>
+        <Headline />
         <section
           css={css`
             width: 50%;
-
             display: flex;
             flex-wrap: wrap;
+            @media (max-width: ${mobileBreakPoint + 'px'}) {
+              width: 96vw;
+            }
           `}
         >
           <InputFirstName />
