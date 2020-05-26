@@ -12,7 +12,7 @@ export const Headline = () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 8em;
+        margin-bottom: 8rem;
         background: #666;
         color: #fff;
       `}
@@ -23,7 +23,7 @@ export const Headline = () => {
       >
         <h1
           css={css`
-            font-size: 3em;
+            font-size: 3rem;
           `}
         >
           Form

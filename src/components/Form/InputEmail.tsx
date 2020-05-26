@@ -12,14 +12,14 @@ export const InputEmail = () => {
     <div
       css={css`
         width: 100%;
-        margin-bottom: 4em;
+        margin-bottom: 4rem;
         display: flex;
         flex-direction: column;
       `}
     >
       <h2
         css={css`
-          font-size: 2em;
+          font-size: 2rem;
         `}
       >
         Email
@@ -27,8 +27,8 @@ export const InputEmail = () => {
       <input
         value={formData.email}
         css={css`
-          font-size: 2em;
-          padding: 0.25em;
+          font-size: 2rem;
+          padding: 0.25rem;
           border-radius: 5px;
           border: 1px solid #ccc;
         `}

@@ -27,8 +27,8 @@ export const SubmitButton = () => {
         value={formData.lastName}
         css={css`
           width: 50%;
-          font-size: 2em;
-          padding: 0.25em;
+          font-size: 2rem;
+          padding: 0.25rem;
           border-radius: 5px;
           border: 0;
           background: ${isValidData(formData) ? '#666' : '#aaa'};

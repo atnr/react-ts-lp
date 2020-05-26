@@ -15,13 +15,13 @@ export const CheckBoxAgreement = () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2em;
+        margin-bottom: 2rem;
       `}
     >
       <input
         css={css`
-          font-size: 2em;
-          padding: 0.25em;
+          font-size: 2rem;
+          padding: 0.25rem;
           border-radius: 5px;
           border: 0;
         `}
@@ -31,7 +31,7 @@ export const CheckBoxAgreement = () => {
       />
       <p
         css={css`
-          font-size: 2em;
+          font-size: 2rem;
         `}
       >
         I checked all input information.

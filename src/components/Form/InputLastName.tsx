@@ -11,7 +11,7 @@ export const InputLastName = () => {
   return (
     <div
       css={css`
-        width: calc((100% - 2em) / 2);
+        width: calc((100% - 2rem) / 2);
         display: flex;
         flex-direction: column;
       `}
@@ -26,8 +26,8 @@ export const InputLastName = () => {
       <input
         value={formData.lastName}
         css={css`
-          font-size: 2em;
-          padding: 0.25em;
+          font-size: 2rem;
+          padding: 0.25rem;
           border-radius: 5px;
           border: 1px solid #ccc;
         `}

@@ -23,8 +23,8 @@ export const Card = (props: CardType) => {
     >
       <section
         css={css`
-          width: calc(50% - 2em);
-          margin-right: 2em;
+          width: calc(50% - 2rem);
+          margin-right: 2rem;
           @media (max-width: ${mobileBreakPoint + 'px'}) {
             width: 100%;
             margin-bottom: 3rem;
@@ -39,7 +39,7 @@ export const Card = (props: CardType) => {
             css={css`
               width: 100%;
               background: #eee;
-              border-radius: 1em;
+              border-radius: 1rem;
               object-fit: cover;
             `}
             src={imagePath}
@@ -61,8 +61,8 @@ export const Card = (props: CardType) => {
         >
           <h1
             css={css`
-              font-size: 2em;
-              margin: 0 0 1em 0;
+              font-size: 2rem;
+              margin: 0 0 1rem 0;
             `}
           >
             {title}
@@ -74,7 +74,7 @@ export const Card = (props: CardType) => {
         >
           <section
             css={css`
-              font-size: 2em;
+              font-size: 2rem;
             `}
           >
             {description}

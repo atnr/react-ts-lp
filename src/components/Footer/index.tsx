@@ -14,7 +14,7 @@ export const Footer = () => {
     >
       <p
         css={css`
-          font-size: 2em;
+          font-size: 2rem;
           color: #fff;
         `}
       >
