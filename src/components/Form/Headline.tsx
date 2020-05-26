@@ -1,6 +1,8 @@
 /**@jsx jsx*/
 import React from 'react'
 import { jsx, css } from '@emotion/core'
+import InViewMonitor from 'react-inview-monitor'
+
 export const Headline = () => {
   return (
     <section
@@ -15,13 +17,18 @@ export const Headline = () => {
         color: #fff;
       `}
     >
-      <h1
-        css={css`
-          font-size: 3em;
-        `}
+      <InViewMonitor
+        classNameNotInView='hidden'
+        classNameInView='animate__animated animate__fadeInUp slower'
       >
-        Form
-      </h1>
+        <h1
+          css={css`
+            font-size: 3em;
+          `}
+        >
+          Form
+        </h1>
+      </InViewMonitor>
     </section>
   )
 }
