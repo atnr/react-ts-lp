@@ -6,18 +6,32 @@ import 'animate.css'
 
 export const Headline = () => {
   return (
-    <InViewMonitor
-      classNameNotInView='hidden'
-      classNameInView='animate__animated animate__fadeIn delay-1s slower'
+    <div
+      css={css`
+        z-index: 999;
+      `}
     >
-      <h1
-        css={css`
-          margin: 0;
-          font-size: 6rem;
-        `}
+      <InViewMonitor
+        classNameNotInView='hidden'
+        classNameInView='animate__animated animate__fadeInUp slower'
       >
-        HERO is here
-      </h1>
-    </InViewMonitor>
+        <div
+          css={css`
+            background: #333;
+            padding: 0.5em 2em;
+          `}
+        >
+          <h1
+            css={css`
+              margin: 0;
+              font-size: 6rem;
+              color: #fff;
+            `}
+          >
+            HERO is here
+          </h1>
+        </div>
+      </InViewMonitor>
+    </div>
   )
 }
