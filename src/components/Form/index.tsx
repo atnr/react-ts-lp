@@ -8,6 +8,7 @@ import { InputEmail } from './InputEmail'
 import { SubmitButton } from './SubmitButton'
 import { CheckBoxAgreement } from './CheckBoxAgreement'
 import { Headline } from './Headline'
+import InViewMonitor from 'react-inview-monitor'
 
 import { mobileBreakPoint } from '../../consitants'
 
@@ -17,7 +18,7 @@ export const Form = () => {
       <section
         css={css`
           width: 100vw;
-          height: 100vh;
+          min-height: 100vh;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -25,22 +26,29 @@ export const Form = () => {
         `}
       >
         <Headline />
-        <section
-          css={css`
-            width: 50%;
-            display: flex;
-            flex-wrap: wrap;
-            @media (max-width: ${mobileBreakPoint + 'px'}) {
-              width: 96vw;
-            }
-          `}
+
+        <InViewMonitor
+          classNameNotInView='hidden'
+          classNameInView='animate__animated animate__fadeIn slower'
         >
-          <InputFirstName />
-          <InputLastName />
-          <InputEmail />
-          <CheckBoxAgreement />
-          <SubmitButton />
-        </section>
+          <section
+            css={css`
+              //width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              @media (max-width: ${mobileBreakPoint + 'px'}) {
+                width: 96vw;
+              }
+            `}
+          >
+            <InputFirstName />
+
+            <InputLastName />
+            <InputEmail />
+            <CheckBoxAgreement />
+            <SubmitButton />
+          </section>
+        </InViewMonitor>
       </section>
     </FormContextWrapper>
   )

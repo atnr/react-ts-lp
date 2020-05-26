@@ -9,7 +9,7 @@ export const SubmitButton = () => {
   const onClickHandle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    return
+    return alert('Set your endpoint here')
   }
   return (
     <div
