@@ -1,7 +1,7 @@
 /**@jsx jsx*/
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
-import { FormContext } from './context'
+import { FormContext, initialFormData } from './context'
 import { isValidData } from './functions/isValidData'
 
 export const SubmitButton = () => {
@@ -9,7 +9,11 @@ export const SubmitButton = () => {
   const onClickHandle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
-    return alert('Set your endpoint here')
+    //Set your endpoint here
+    alert('Set your endpoint here')
+
+    //reset form data
+    return setFormData(initialFormData)
   }
   return (
     <div
