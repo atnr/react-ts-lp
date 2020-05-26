@@ -1,6 +1,9 @@
 {
   "name": "react-ts-lp",
   "version": "0.1.0",
+  "repository": "git@github.com:react/react-ts-lp  ",
+  "author": "Atsunori Kihara <contact@atnr.net>",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "@emotion/core": "^10.0.28",
@@ -11,9 +14,11 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-helmet": "^6.0.0",
     "animate.css": "^4.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
     "react-inview-monitor": "^2.3.0",
     "react-scripts": "3.4.1",
     "typescript": "~3.7.2"
