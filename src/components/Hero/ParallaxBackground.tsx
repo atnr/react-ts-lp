@@ -1,7 +1,7 @@
 /**@jsx jsx*/
-import React, { useEffect, useState, useCallback } from 'react'
+import React, { useEffect, useState, useCallback, useContext } from 'react'
 import { jsx, css } from '@emotion/core'
-import InViewMonitor from 'react-inview-monitor'
+import { LoadingContext } from '../Loading/context'
 
 type Props = {
   imagePath: string
@@ -10,6 +10,7 @@ type Props = {
 
 export const ParallaxBackground = (props: Props) => {
   const [backgroundPositionY, setBackgroundPositionY] = useState<number>(0)
+  const { setIsLoading } = useContext(LoadingContext)
 
   const parallaxScroll = useCallback(() => {
     return setBackgroundPositionY(-window.pageYOffset)
@@ -29,10 +30,6 @@ export const ParallaxBackground = (props: Props) => {
         width: 100vw;
         height: 100vh;
         overflow: hidden;
-        /* background: url(${props.imagePath}) no-repeat;
-        background-size: 200%;
-        background-position-x: 50%;
-        background-position-y: ${backgroundPositionY + 'px'}; */
       `}
     >
       <img
@@ -44,6 +41,7 @@ export const ParallaxBackground = (props: Props) => {
           transform: matrix(1, 0, 0, 1, 1, ${-backgroundPositionY});
         `}
         alt={props.alt}
+        onLoad={() => setIsLoading(false)}
       />
     </section>
   )

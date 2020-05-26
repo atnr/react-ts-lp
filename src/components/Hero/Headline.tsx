@@ -1,10 +1,15 @@
 /**@jsx jsx*/
-import React from 'react'
+import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
+import { LoadingContext } from '../Loading/context'
 import InViewMonitor from 'react-inview-monitor'
 import 'animate.css'
 
 export const Headline = () => {
+  const { isLoading } = useContext(LoadingContext)
+
+  if (isLoading) return null
+
   return (
     <div
       css={css`
