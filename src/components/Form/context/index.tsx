@@ -12,7 +12,7 @@ export type FormContextType = {
   setFormData: Dispatch<FormData>
 }
 
-const initialFormData: FormData = {
+export const initialFormData: FormData = {
   lastName: '',
   firstName: '',
   email: '',
