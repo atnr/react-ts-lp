@@ -2,16 +2,16 @@
   {
     "title": "Lorem ipsum dolor sit amet",
     "description": "Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.",
-    "imagePath": "/images/cup.jpg"
+    "imagePath": "./images/cup.jpg"
   },
   {
     "title": "consectetuer adipiscing elit",
     "description": "Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. ",
-    "imagePath": "/images/office.jpg"
+    "imagePath": "./images/office.jpg"
   },
   {
     "title": "Aenean commodo ligula eget dolor",
     "description": "Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. ",
-    "imagePath": "/images/plants.jpg"
+    "imagePath": "./images/plants.jpg"
   }
 ]
