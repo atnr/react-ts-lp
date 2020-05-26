@@ -5,6 +5,8 @@ import { LoadingContext } from '../Loading/context'
 import InViewMonitor from 'react-inview-monitor'
 import 'animate.css'
 
+import { mobileBreakPoint } from '../../consitants'
+
 export const Headline = () => {
   const { isLoading } = useContext(LoadingContext)
 
@@ -23,7 +25,7 @@ export const Headline = () => {
         <div
           css={css`
             background: #333;
-            padding: 0.5em 2em;
+            padding: 0.5rem 2rem;
           `}
         >
           <h1
@@ -31,6 +33,9 @@ export const Headline = () => {
               margin: 0;
               font-size: 6rem;
               color: #fff;
+              @media (max-width: ${mobileBreakPoint + 'px'}) {
+                font-size: calc(100vw / 11);
+              }
             `}
           >
             HERO is here
