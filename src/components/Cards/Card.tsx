@@ -1,10 +1,15 @@
 /**@jsx jsx*/
 import React from 'react'
 import { jsx, css } from '@emotion/core'
-import { CardType } from './index'
 import InViewMonitor from 'react-inview-monitor'
 
 import { mobileBreakPoint } from '../../consitants'
+
+type CardType = {
+  title: string
+  description: string
+  imagePath: string
+}
 
 export const Card = (props: CardType) => {
   const { title, description, imagePath } = props
