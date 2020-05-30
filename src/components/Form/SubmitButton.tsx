@@ -3,6 +3,8 @@ import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { FormContext, initialFormData } from './context'
 import { isValidData } from './functions/isValidData'
+import InViewMonitor from 'react-inview-monitor'
+import { mobileBreakPoint } from '../../consitants'
 
 export const SubmitButton = () => {
   const { formData, setFormData } = useContext(FormContext)
@@ -23,22 +25,30 @@ export const SubmitButton = () => {
         justify-content: center;
       `}
     >
-      <button
-        value={formData.lastName}
-        css={css`
-          width: 50%;
-          font-size: 2rem;
-          padding: 2rem 0.25rem;
-          border-radius: 5px;
-          border: 0;
-          background: ${isValidData(formData) ? '#666' : '#aaa'};
-          color: #fff;
-        `}
-        onClick={(e) => onClickHandle(e)}
-        disabled={!isValidData(formData)}
+      <InViewMonitor
+        classNameNotInView='hidden'
+        classNameInView='animate__animated animate__fadeInUp slower'
       >
-        Submit
-      </button>
+        <button
+          value={formData.lastName}
+          css={css`
+            width: 300px;
+            font-size: 2rem;
+            padding: 2rem 0.25rem;
+            border-radius: 5px;
+            border: 0;
+            background: ${isValidData(formData) ? '#666' : '#aaa'};
+            color: #fff;
+            @media (max-width: ${mobileBreakPoint + 'px'}) {
+              width: 90vw;
+            }
+          `}
+          onClick={(e) => onClickHandle(e)}
+          disabled={!isValidData(formData)}
+        >
+          Submit
+        </button>
+      </InViewMonitor>
     </div>
   )
 }

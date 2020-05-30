@@ -25,6 +25,7 @@ const App = () => {
             padding: 0;
             font-size: 10px;
             font-family: sans-serif;
+            overflow-x: hidden;
           }
           .hidden {
             opacity: 0;
