@@ -15,7 +15,7 @@ export const CheckBoxAgreement = () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
       `}
     >
       <input
@@ -23,19 +23,19 @@ export const CheckBoxAgreement = () => {
           font-size: 2rem;
           padding: 0.25rem;
           border-radius: 5px;
-          border: 0;
+          border: 1px solid #ccc;
         `}
         type='checkbox'
         checked={formData.agreement}
         onChange={(e) => onChangeHandle(e)}
       />
-      <p
+      <label
         css={css`
           font-size: 2rem;
         `}
       >
         I checked all input information.
-      </p>
+      </label>
     </div>
   )
 }
