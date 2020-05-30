@@ -2,6 +2,7 @@
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { FormContext } from './context'
+import InViewMonitor from 'react-inview-monitor'
 
 export const InputEmail = () => {
   const { formData, setFormData } = useContext(FormContext)
@@ -17,24 +18,30 @@ export const InputEmail = () => {
         flex-direction: column;
       `}
     >
-      <h2
-        css={css`
-          font-size: 2rem;
-        `}
+      <InViewMonitor
+        classNameNotInView='hidden'
+        classNameInView='animate__animated animate__fadeInUp slower'
       >
-        Email
-      </h2>
-      <input
-        value={formData.email}
-        css={css`
-          font-size: 2rem;
-          padding: 0.25rem;
-          border-radius: 5px;
-          border: 1px solid #ccc;
-        `}
-        onChange={(e) => onChangeHandle(e)}
-        placeholder='hoge@example.com'
-      />
+        <h2
+          css={css`
+            font-size: 2rem;
+          `}
+        >
+          Email
+        </h2>
+        <input
+          value={formData.email}
+          css={css`
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            width: calc(100% - 2rem);
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          `}
+          onChange={(e) => onChangeHandle(e)}
+          placeholder='hoge@example.com'
+        />
+      </InViewMonitor>
     </div>
   )
 }

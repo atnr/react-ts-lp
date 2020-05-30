@@ -2,6 +2,7 @@
 import React, { useContext } from 'react'
 import { jsx, css } from '@emotion/core'
 import { FormContext } from './context'
+import InViewMonitor from 'react-inview-monitor'
 
 export const InputLastName = () => {
   const { formData, setFormData } = useContext(FormContext)
@@ -16,24 +17,30 @@ export const InputLastName = () => {
         flex-direction: column;
       `}
     >
-      <h2
-        css={css`
-          font-size: 2em;
-        `}
+      <InViewMonitor
+        classNameNotInView='hidden'
+        classNameInView='animate__animated animate__fadeInUp slower'
       >
-        Last Name
-      </h2>
-      <input
-        value={formData.lastName}
-        css={css`
-          font-size: 2rem;
-          padding: 0.25rem;
-          border-radius: 5px;
-          border: 1px solid #ccc;
-        `}
-        onChange={(e) => onChangeHandle(e)}
-        placeholder='lastName'
-      />
+        <h2
+          css={css`
+            font-size: 2em;
+          `}
+        >
+          Last Name
+        </h2>
+        <input
+          value={formData.lastName}
+          css={css`
+            font-size: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: calc(100% - 2rem);
+          `}
+          onChange={(e) => onChangeHandle(e)}
+          placeholder='lastName'
+        />
+      </InViewMonitor>
     </div>
   )
 }
