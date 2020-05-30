@@ -10,9 +10,7 @@ import { mobileBreakPoint } from '../../consitants'
 export const Headline = () => {
   const { isLoading } = useContext(LoadingContext)
 
-  if (isLoading) return null
-
-  return (
+  const HeadlineComponent = isLoading ? null : (
     <div
       css={css`
         z-index: 999;
@@ -44,4 +42,6 @@ export const Headline = () => {
       </InViewMonitor>
     </div>
   )
+
+  return HeadlineComponent
 }

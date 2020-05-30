@@ -12,7 +12,7 @@ const scrollLock = css`
 
 export const Loading = () => {
   const { isLoading } = useContext(LoadingContext)
-  return isLoading ? (
+  const LoadingComponent = isLoading ? (
     <section
       css={css`
         html,
@@ -79,4 +79,5 @@ export const Loading = () => {
       </div>
     </section>
   ) : null
+  return LoadingComponent
 }
