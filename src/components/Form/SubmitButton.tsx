@@ -1,13 +1,13 @@
 /**@jsx jsx*/
-import React, { useContext } from 'react'
+import React from 'react'
 import { jsx, css } from '@emotion/core'
-import { FormContext, initialFormData } from './context'
+import { useFormContext, initialFormData } from './context'
 import { isValidData } from './functions/isValidData'
 import InViewMonitor from 'react-inview-monitor'
 import { mobileBreakPoint } from '../../consitants'
 
 export const SubmitButton = () => {
-  const { formData, setFormData } = useContext(FormContext)
+  const { formData, setFormData } = useFormContext()
   const onClickHandle = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
@@ -30,7 +30,6 @@ export const SubmitButton = () => {
         classNameInView='animate__animated animate__fadeInUp slower'
       >
         <button
-          value={formData.lastName}
           css={css`
             width: 300px;
             font-size: 2rem;
