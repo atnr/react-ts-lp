@@ -1,4 +1,10 @@
-import React, { useState, createContext, Dispatch, ReactNode } from 'react'
+import React, {
+  useState,
+  createContext,
+  Dispatch,
+  ReactNode,
+  useContext,
+} from 'react'
 
 export type FormData = {
   lastName: string
@@ -21,8 +27,10 @@ export const initialFormData: FormData = {
 
 export const FormContext = createContext<FormContextType>({
   formData: initialFormData,
-  setFormData: () => null,
+  setFormData: () => {},
 })
+
+export const useFormContext = () => useContext(FormContext)
 
 export const FormContextWrapper = ({ children }: { children: ReactNode }) => {
   const [formData, setFormData] = useState<FormData>(initialFormData)
