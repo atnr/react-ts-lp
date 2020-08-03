@@ -4,7 +4,7 @@ TypeScript option is enabled.
 このプロジェクトは [Create React App](https://github.com/facebook/create-react-app)で生成されています。
 TypeScript オプションが有効になっています。
 
-[SAMPLE](https://www.atnr.net/react-ts-lp/)
+[SAMPLE](https://react-ts-lp.vercel.app/)
 
 ## Components
 
