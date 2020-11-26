@@ -1,7 +1,7 @@
 /**@jsx jsx*/
-import React, { useEffect, useState, useCallback, useContext } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import { jsx, css } from '@emotion/core'
-import { LoadingContext } from '../Loading/context'
+import { useLoadingContext } from '../Loading/context'
 
 type Props = {
   imagePath: string
@@ -10,7 +10,7 @@ type Props = {
 
 export const ParallaxBackground = (props: Props) => {
   const [backgroundPositionY, setBackgroundPositionY] = useState<number>(0)
-  const { setIsLoading } = useContext(LoadingContext)
+  const { setIsLoading } = useLoadingContext()
 
   const parallaxScroll = useCallback(() => {
     return setBackgroundPositionY(-window.pageYOffset)

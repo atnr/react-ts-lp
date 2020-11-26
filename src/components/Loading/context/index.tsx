@@ -1,4 +1,4 @@
-import React, { useState, createContext, Dispatch, ReactNode } from 'react'
+import React, { useState, createContext, Dispatch, ReactNode, useContext } from 'react'
 
 export type LoadingContextType = {
   isLoading: boolean
@@ -24,3 +24,5 @@ export const LoadingContextWrapper = ({
     </LoadingContext.Provider>
   )
 }
+
+export const useLoadingContext = () => useContext(LoadingContext)
