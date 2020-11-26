@@ -1,6 +1,6 @@
 /**@jsx jsx*/
 import { jsx, css, Global } from '@emotion/core'
-import React, { useContext } from 'react'
+import React from 'react'
 import { Helmet } from 'react-helmet'
 import { Loading } from './components/Loading'
 import { Hero } from './components/Hero'
