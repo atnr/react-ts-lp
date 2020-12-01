@@ -7,6 +7,6 @@ declare module 'react-inview-monitor' {
     intoViewMargin?: string,
     onInView?: function,
     onNotInView?: function
-  ): any
+  ): JSX.Element
   export default InViewMonitor
 }
