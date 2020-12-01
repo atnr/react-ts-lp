@@ -1,7 +1,7 @@
 /**@jsx jsx*/
 import { jsx, css, Global } from '@emotion/core'
 import React, { useContext } from 'react'
-import { LoadingContext } from './context'
+import { useLoadingContext } from './context'
 
 const scrollLock = css`
   html,
@@ -11,7 +11,7 @@ const scrollLock = css`
 `
 
 export const Loading = () => {
-  const { isLoading } = useContext(LoadingContext)
+  const { isLoading } = useLoadingContext()
   const LoadingComponent = isLoading ? (
     <section
       css={css`
