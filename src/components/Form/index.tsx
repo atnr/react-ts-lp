@@ -9,7 +9,7 @@ import { SubmitButton } from './SubmitButton'
 import { CheckBoxAgreement } from './CheckBoxAgreement'
 import { Headline } from './Headline'
 
-import { mobileBreakPoint } from '../../consitants'
+import { mobileBreakPoint } from '../../constants'
 
 export const Form = () => {
   return (
