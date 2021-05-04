@@ -3,7 +3,7 @@ import React from 'react'
 import { jsx, css } from '@emotion/core'
 import InViewMonitor from 'react-inview-monitor'
 
-import { mobileBreakPoint } from '../../consitants'
+import { mobileBreakPoint } from '../../constants'
 
 type CardType = {
   title: string
