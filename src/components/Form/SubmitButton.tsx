@@ -4,7 +4,7 @@ import { jsx, css } from '@emotion/core'
 import { useFormContext, initialFormData } from './context'
 import { isValidData } from './functions/isValidData'
 import InViewMonitor from 'react-inview-monitor'
-import { mobileBreakPoint } from '../../consitants'
+import { mobileBreakPoint } from '../../constants'
 
 export const SubmitButton = () => {
   const { formData, setFormData } = useFormContext()

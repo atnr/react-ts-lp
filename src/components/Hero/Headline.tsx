@@ -5,7 +5,7 @@ import { LoadingContext } from '../Loading/context'
 import InViewMonitor from 'react-inview-monitor'
 import 'animate.css'
 
-import { mobileBreakPoint } from '../../consitants'
+import { mobileBreakPoint } from '../../constants'
 
 export const Headline = () => {
   const { isLoading } = useContext(LoadingContext)
