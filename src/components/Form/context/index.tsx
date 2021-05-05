@@ -4,18 +4,17 @@ import React, {
   Dispatch,
   ReactNode,
   useContext,
+  useReducer,
 } from 'react'
 
-export type FormData = {
-  lastName: string
-  firstName: string
-  email: string
-  agreement: boolean
-}
+import { FormData, FormAction, formReducer } from './reducer'
 
-export type FormContextType = {
-  formData: FormData
-  setFormData: Dispatch<FormData>
+export type FormStateContextType = {
+  state: FormData
+  dispatch: Dispatch<FormAction>
+}
+export type FormDispatchContextType = {
+  dispatch: Dispatch<FormAction>
 }
 
 export const initialFormData: FormData = {
@@ -25,18 +24,21 @@ export const initialFormData: FormData = {
   agreement: false,
 }
 
-export const FormContext = createContext<FormContextType>({
-  formData: initialFormData,
-  setFormData: () => {},
+export const FormStateContext = createContext<FormStateContextType>({
+  state: initialFormData,
+  dispatch: () => {},
+})
+export const FormDispatchContext = createContext<FormDispatchContextType>({
+  dispatch: () => {},
 })
 
-export const useFormContext = () => useContext(FormContext)
+export const useFormStateContext = () => useContext(FormStateContext)
 
 export const FormContextWrapper = ({ children }: { children: ReactNode }) => {
-  const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [state, dispatch] = useReducer(formReducer, initialFormData)
   return (
-    <FormContext.Provider value={{ formData, setFormData }}>
+    <FormStateContext.Provider value={{ state, dispatch }}>
       {children}
-    </FormContext.Provider>
+    </FormStateContext.Provider>
   )
 }

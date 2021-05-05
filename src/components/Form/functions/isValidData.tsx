@@ -1,4 +1,4 @@
-import { FormData } from '../context'
+import { FormData } from '../context/reducer'
 
 export const isValidData = (formData: FormData) => {
   if (formData.firstName === '') return false

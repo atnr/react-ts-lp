@@ -1,14 +1,16 @@
 /**@jsx jsx*/
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
 import { jsx, css } from '@emotion/core'
-import { useFormContext } from './context'
+import { useFormStateContext } from './context'
 import InViewMonitor from 'react-inview-monitor'
 
-export const InputEmail = () => {
-  const { formData, setFormData } = useFormContext()
-  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, email: e.target.value })
-  }
+type Props = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const InputEmail = (props: Props) => {
+  const { onChange } = props
+  const { state } = useFormStateContext()
 
   return useMemo(() => {
     return (
@@ -32,7 +34,7 @@ export const InputEmail = () => {
             Email
           </h2>
           <input
-            value={formData.email}
+            value={state.email}
             css={css`
               font-size: 2rem;
               padding: 0.5rem 1rem;
@@ -40,11 +42,11 @@ export const InputEmail = () => {
               border-radius: 5px;
               border: 1px solid #ccc;
             `}
-            onChange={(e) => onChangeHandle(e)}
+            onChange={onChange}
             placeholder='hoge@example.com'
           />
         </InViewMonitor>
       </div>
     )
-  }, [formData.email])
+  }, [onChange, state.email])
 }

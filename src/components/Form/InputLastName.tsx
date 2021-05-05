@@ -1,14 +1,16 @@
 /**@jsx jsx*/
-import React, { useMemo } from 'react'
+import React, { useMemo, useCallback } from 'react'
 import { jsx, css } from '@emotion/core'
-import { useFormContext } from './context'
+import { useFormStateContext } from './context'
 import InViewMonitor from 'react-inview-monitor'
 
-export const InputLastName = () => {
-  const { formData, setFormData } = useFormContext()
-  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, lastName: e.target.value })
-  }
+type Props = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const InputLastName = (props: Props) => {
+  const { onChange } = props
+  const { state } = useFormStateContext()
 
   return useMemo(() => {
     return (
@@ -31,7 +33,7 @@ export const InputLastName = () => {
             Last Name
           </h2>
           <input
-            value={formData.lastName}
+            value={state.lastName}
             css={css`
               font-size: 2rem;
               padding: 0.5rem 1rem;
@@ -39,11 +41,11 @@ export const InputLastName = () => {
               border: 1px solid #ccc;
               width: calc(100% - 2rem);
             `}
-            onChange={(e) => onChangeHandle(e)}
+            onChange={onChange}
             placeholder='lastName'
           />
         </InViewMonitor>
       </div>
     )
-  }, [formData.lastName])
+  }, [onChange, state.lastName])
 }

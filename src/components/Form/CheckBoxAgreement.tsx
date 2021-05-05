@@ -1,50 +1,50 @@
 /**@jsx jsx*/
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo } from 'react'
 import { jsx, css } from '@emotion/core'
-import { useFormContext } from './context'
+import { useFormStateContext } from './context'
 import InViewMonitor from 'react-inview-monitor'
 
-export const CheckBoxAgreement = () => {
-  const { formData, setFormData } = useFormContext()
+const wrapperStyle = css`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+`
+const inputStyle = css`
+  font-size: 2rem;
+  padding: 0.25rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+`
+const labelStyle = css`
+  font-size: 2rem;
+`
 
-  const onChangeHandle = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, agreement: e.target.checked })
-  }
+type Props = {
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+}
+
+export const CheckBoxAgreement = (props: Props) => {
+  const { onChange } = props
+  const { state } = useFormStateContext()
+
   return useMemo(() => {
     return (
-      <div
-        css={css`
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin-bottom: 4rem;
-        `}
-      >
+      <div css={wrapperStyle}>
         <InViewMonitor
           classNameNotInView='hidden'
           classNameInView='animate__animated animate__fadeInUp slower'
         >
           <input
-            css={css`
-              font-size: 2rem;
-              padding: 0.25rem;
-              border-radius: 5px;
-              border: 1px solid #ccc;
-            `}
+            css={inputStyle}
             type='checkbox'
-            checked={formData.agreement}
-            onChange={(e) => onChangeHandle(e)}
+            checked={state.agreement}
+            onChange={onChange}
           />
-          <label
-            css={css`
-              font-size: 2rem;
-            `}
-          >
-            I checked all input information.
-          </label>
+          <label css={labelStyle}>I checked all input information.</label>
         </InViewMonitor>
       </div>
     )
-  }, [formData.agreement])
+  }, [onChange, state.agreement])
 }
